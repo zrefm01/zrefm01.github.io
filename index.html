@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zessen REFM</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #1c1c1c;
+            background-image: url('images/background.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            color: #ffffff;
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 20px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 1);
+            backdrop-filter: blur(10px);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
+            background: -webkit-linear-gradient(#ffffff, #2c3e50);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        header p {
+            font-size: 1em;
+            color: #cccccc;
+        }
+
+        .image-placeholder {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #333333;
+            background: rgba(0, 0, 0, 0);
+            width: 100%;
+            height: 200px;
+            margin: 20px 0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 0px rgba(0, 0, 0, 0);
+        }
+
+        .image-placeholder img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+            transition: transform 0.5s;
+        }
+
+        .image-placeholder img:hover {
+            transform: scale(1.05);
+        }
+
+        section {
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            border-bottom: 2px solid #686060;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+            font-size: 1.5em;
+            position: relative;
+            cursor: pointer;
+            transition: color 0.3s, background-color 0.3s;
+            color: #ffffff;
+        }
+
+        h2::after {
+            content: '▶';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1em;
+            transition: transform 0.3s;
+        }
+
+        h2.open::after {
+            transform: translateY(-50%) rotate(90deg);
+        }
+
+        .dropdown-content {
+            max-height: 0;
+            opacity: 0;
+            transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .dropdown-content.show {
+            max-height: 500px;
+            opacity: 1;
+        }
+
+        .dropdown-content ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .dropdown-content li {
+            padding: 8px 10px;
+            border-bottom: 1px solid #333333;
+            transition: transform 0.3s, background-color 0.3s;
+            border-left: 5px solid transparent;
+            background-color: #222222;
+        }
+
+        .dropdown-content li:hover {
+            transform: scale(1.01);
+            background-color: #333333;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #111111;
+            border-top: 2px solid #333333;
+        }
+
+        a {
+            color: #a2b4c0;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        #summary {
+            cursor: default;
+            color: #ffffff;
+            background: none;
+            border-bottom: none;
+        }
+
+        .dropdown-header {
+            color: #ffffff;
+        }
+
+        .dropdown-header:hover {
+            background-color: #000000;
+            background: rgba(0, 0, 0, 0);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Dennis Van Zessen</h1>
+            <p>Real Estate - Sr. Project Manager - Consultancy</p>
+            <p><a href="https://www.linkedin.com/in/dennisvanzessen" target="_blank">LinkedIn Profile</a></p>
+            <p><a href="Profile.pdf" target="_blank">Resume</a></p>
+            <div class="image-placeholder">
+                <img src="https://media.licdn.com/dms/image/C4E03AQFtNzRNd7LdIw/profile-displayphoto-shrink_800_800/0/1598358212160?e=1727308800&v=beta&t=3HquCpHb-OGylWNAU76FjeTULO1V-jx8hqwdbFlNL74" alt="Profile Picture"> <!-- Placeholder for profile picture -->
+            </div>
+        </header>
+        
+        <section id="summary">
+            <h1>About me</h1>
+            <div class="content">
+                <p>Experience: Manager Projects PMO, sr Project Manager, Real Estate Sr Advisor in maintenance Contract Manager, Trainer in project Management, Coach in Project Management and Maintenance (BOEI IIV-IAV). Responsible for Project Management Teams, steer on content output and people. Push boundaries to improve performances and growth of individuals from Professional Sports and NLP experience. Overcome challenges, surprise others and yourself. Help your client succeed, loyalty and integrity.</p>
+            </div>
+        </section>
+        
+        <section id="skills">
+            <h2 class="dropdown-header">Key Skills</h2>
+            <div class="dropdown-content">
+                <ul>
+                    <li>Sustainability</li>
+                    <li>Project Management</li>
+                    <li>Operations Management</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section id="experience">
+            <h2 class="dropdown-header">Experience</h2>
+            <div class="dropdown-content">
+                <ul>
+                    <li>ZESSEN RE-FM CONSULTANCY BV - Owner - Real Estate and Facility's Consultant (July 2017 - Present)</li>
+                    <li>KLM (via Sodexo) - Senior Project-Program Manager KLM RE&FC (August 2015 - July 2017)</li>
+                    <li>Shell - Manager Projects (October 2008 - August 2015)</li>
+                    <li>Arcadis (PRC) - Project Manager Real Estate (October 2004 - October 2008)</li>
+                    <li>EGM architecten - Technisch tekenaar (October 2001 - October 2002)</li>
+                    <li>OMA - Technisch tekenaar (October 2000 - October 2001)</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section id="education">
+            <h2 class="dropdown-header">Education</h2>
+            <div class="dropdown-content">
+                <ul>
+                    <li>Hogeschool Utrecht - Post-bachelor, Integraal Inspecteur + Adviseur BOEI (IIV-IAV) (2020 - 2021)</li>
+                    <li>Allesovercrypto - Crypto & Blockchain masterclass (2021 - 2022)</li>
+                    <li>Weconomics Certified Program: Digital Leadership & Blockchain (2019 - 2020)</li>
+                    <li>ICM opleidingen & trainingen - IPMA D Certificering, Project Management (2019)</li>
+                    <li>NLP Academie - NLP Business Practitioner IANLP (2017 - 2018)</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section id="certifications">
+            <h2 class="dropdown-header">Certifications</h2>
+            <div class="dropdown-content">
+                <ul>
+                    <li>MTS Bouwkunde</li>
+                    <li>Certificaat Veilig Werken met Rolsteigers</li>
+                    <li>Certified Blockchain professional Program</li>
+                    <li>NEN3140 Projectleiders</li>
+                    <li>NLP- Practioner International Association for NLP</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section id="languages">
+            <h2 class="dropdown-header">Languages</h2>
+            <div class="dropdown-content">
+                <ul>
+                    <li>English (Professional Working)</li>
+                    <li>Dutch (Native or Bilingual)</li>
+                    <li>German (Limited Working)</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section id="awards">
+            <h2 class="dropdown-header">Honors & Awards</h2>
+            <div class="dropdown-content">
+                <ul>
+                    <li>Merit Award Proces & Project Management</li>
+                    <li>Special Recognition Award</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        document.querySelectorAll('.dropdown-header').forEach(header => {
+            header.addEventListener('click', function() {
+                const content = this.nextElementSibling;
+                const isOpen = content.classList.contains('show');
+
+                this.classList.toggle('open', !isOpen);
+
+                document.querySelectorAll('.dropdown-content').forEach(el => {
+                    if (el !== content) {
+                        el.style.maxHeight = null;
+                        el.classList.remove('show');
+                        el.previousElementSibling.classList.remove('open');
+                    }
+                });
+
+                if (isOpen) {
+                    content.style.maxHeight = null;
+                    content.classList.remove('show');
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                    content.classList.add('show');
+                }
+            });
+        });
+
+        const images = [
+            'images/background.jpg',
+            'https://media.licdn.com/dms/image/C4E03AQFtNzRNd7LdIw/profile-displayphoto-shrink_800_800/0/1598358212160?e=1727308800&v=beta&t=3HquCpHb-OGylWNAU76FjeTULO1V-jx8hqwdbFlNL74'
+        ];
+
+        images.forEach(src => {
+            const img = new Image();
+            img.src = src;
+        });
+    </script>
+</body>
+</html>
